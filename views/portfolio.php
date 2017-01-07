@@ -1,11 +1,13 @@
 <div>
   <table class="table table-striped" style="text-align: left">
       <thead>
+        <tr>
         <th>Symbol</th>
         <th>Name</th>
         <th>Shares</th>
         <th>Price</th>
         <th>TOTAL</th>
+        </tr>
       </thead>
       
         <?php foreach ($positions as $position): ?>
