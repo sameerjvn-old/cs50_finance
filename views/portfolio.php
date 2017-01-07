@@ -1,12 +1,12 @@
 <div style="text-align: center">
   <table>
-      <tr><b>
+      <tr>
         <td>Symbol</td>
         <td>Name</td>
         <td>Shares</td>
         <td>Price</td>
         <td>TOTAL</td>
-      </b></tr>
+      </tr>
       
       <?php foreach ($positions as $position): ?>
       <tr>
@@ -14,7 +14,7 @@
         <td><?= $position["name"] ?></td>
         <td><?= $position["shares"] ?></td>
         <td>$<?= $position["price"] ?></td>
-        <td>$<?= number_format($position["price"], 2) ?></td>
+        <td>$<?= number_format($position["total"], 2) ?></td>
       </tr>
       <?php endforeach ?>
       
