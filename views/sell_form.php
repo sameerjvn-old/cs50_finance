@@ -1,6 +1,6 @@
 <form action="sell.php" method="post">
   <div class="form-group">
-    <label>Symbol:</label>
+    <labelgit >Symbol:</label>
     <input type="text" class="form-control" name="sellsym" placeholder="Enter Symbol">
   </div>
     <br><br>
