@@ -1,3 +1,29 @@
-<div>
-    <iframe allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1&iv_load_policy=3&rel=0" width="420"></iframe>
+<div style="text-align: center">
+  <table>
+      <tr><b>
+        <td>Symbol</td>
+        <td>Name</td>
+        <td>Shares</td>
+        <td>Price</td>
+        <td>TOTAL</td>
+      </b></tr>
+      
+      <?php foreach ($positions as $position): ?>
+      <tr>
+        <td><?= $position["symbol"] ?></td>
+        <td><?= $position["name"] ?></td>
+        <td><?= $position["shares"] ?></td>
+        <td>$<?= $position["price"] ?></td>
+        <td>$<?= number_format($position["price"], 2) ?></td>
+      </tr>
+      <?php endforeach ?>
+      
+      <tr>
+        <td>Cash</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$<?= number_format($cash, 2) ?></td>
+        </tr>
+  </table>
 </div>
