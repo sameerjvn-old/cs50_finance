@@ -1,25 +1,26 @@
-<div style="text-align: center">
-  <table>
-      <tr>
-        <td>Symbol</td>
-        <td>Name</td>
-        <td>Shares</td>
-        <td>Price</td>
-        <td>TOTAL</td>
-      </tr>
+<div>
+  <table class="table table-striped" style="text-align: left">
+      <thead>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+      </thead>
       
-      <?php foreach ($positions as $position): ?>
-      <tr>
-        <td><?= $position["symbol"] ?></td>
-        <td><?= $position["name"] ?></td>
-        <td><?= $position["shares"] ?></td>
-        <td>$<?= $position["price"] ?></td>
-        <td>$<?= number_format($position["total"], 2) ?></td>
-      </tr>
-      <?php endforeach ?>
+        <?php foreach ($positions as $position): ?>
+          <tr>
+            <td><?= $position["symbol"] ?></td>
+            <td><?= $position["name"] ?></td>
+            <td><?= $position["shares"] ?></td>
+            <td>$<?= $position["price"] ?></td>
+            <td>$<?= number_format($position["total"], 2) ?></td>
+          </tr>
+        <?php endforeach ?>
+      
       
       <tr>
-        <td>Cash</td>
+        <td>CASH</td>
         <td></td>
         <td></td>
         <td></td>
