@@ -1,7 +1,7 @@
 <form action="sell.php" method="post">
   <div class="form-group">
-    <labelgit >Symbol:</label>
-    <input type="text" class="form-control" name="sellsym" placeholder="Enter Symbol">
+    <label>Symbol:</label>
+    <input type="text" class="form-control" name="symbol" placeholder="Enter Symbol">
   </div>
     <br><br>
   <div class="form-group">

@@ -6,8 +6,6 @@
     $rows = CS50::query("SELECT symbol, shares FROM portfolio WHERE user_id = ?" , $_SESSION["id"]);
     $positions = [];
 
-    $spent = 0;
-
     foreach( $rows as $row)
     {
         $stock = lookup($row["symbol"]);
@@ -21,13 +19,13 @@
             "total" => $stock["price"] * $row["shares"]
             ];
         }
-        $spent+= $stock["price"] * $row["shares"];
     }
     
-    $cash = 10000 - $spent;
-    
-
+    $cash = CS50::query("SELECT cash FROM users WHERE id = ?", $_SESSION["id"]);
+    $cash = $cash[0]['cash'];
     // render portfolio
-    render("portfolio.php", ["positions" => $positions, "title" => "Portfolio", "cash" => $cash] );
+    render("portfolio.php", ["positions" => $positions, "title" => "Portfolio", "cash" => $cash]);
+    
+    
 
 ?>
