@@ -48,7 +48,9 @@
         
         CS50::query("INSERT INTO portfolio (user_id, symbol, shares) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE shares = shares + VALUES (shares)", $_SESSION["id"], $stock["symbol"], $_POST["shares"]);
         CS50::query("UPDATE users SET cash = cash - ? WHERE id = ?", $loss, $_SESSION["id"]);
-    
+        $transaction = "BUY";
+        $time = CS50::query("SELECT NOW() as a");
+        CS50::query("INSERT INTO history (id, Date, Transaction, Symbol, Shares, Price) VALUES (?, ?, ?, ?, ?, ?)", $_SESSION["id"], $time[0][a] , $transaction, $stock["symbol"], $_POST["shares"], $stock["price"]);
         redirect("/");
     }
 

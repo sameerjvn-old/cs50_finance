@@ -19,7 +19,10 @@
         
         $sell = CS50::query("SELECT * FROM portfolio WHERE id = ? AND symbol = ?", $_SESSION["id"], $_POST["sellsym"] );
         $stock = lookup($_POST["sellsym"]);
-        $profit = $sell["shares"] * $stock["price"];
+        $profit = $sell[0]["shares"] * $stock["price"];
+        $time = CS50::query("SELECT now() as a");
+        $transaction = "SELL";
+        CS50::query("INSERT INTO history (id, Transaction, Date, Symbol, Shares, Price) VALUES (?, ?, ?, ?, ?, ?)", $_SESSION["id"], $transaction, $time[0][a] , $stock["symbol"], $sell[0]["shares"] , $stock["price"]);
         CS50::query("DELETE FROM portfolio WHERE user_id = ? AND symbol = ?", $_SESSION["id"], $_POST["sellsym"] );
         CS50::query("UPDATE users SET cash = cash + ? WHERE id = ?" , $profit, $_SESSION["id"]);
         
