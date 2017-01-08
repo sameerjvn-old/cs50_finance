@@ -5,5 +5,5 @@
   <div class="form-group">
     <input type="text" class="form-control" name="shares" placeholder="Shares">
   </div>
-  <input type="submit" value="Buy" class="btn btn-default"></input>
+  <input type="submit" value="Buy" class="btn btn-default">
 </form>
