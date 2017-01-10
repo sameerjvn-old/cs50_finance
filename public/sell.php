@@ -18,6 +18,18 @@
         }
         
         $sell = CS50::query("SELECT * FROM portfolio WHERE user_id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"] );
+        
+        
+        
+        $t = CS50::query("SELECT COUNT(*) FROM portfolio WHERE user_id = ? AND symbol = ? ", $_SESSION["id"], $_POST["symbol"] );
+        
+        if($t[0]["COUNT(*)"] == 0)
+        {
+            apologize("You do not own that stock.");
+        }
+        
+        
+        
         $stock = lookup($_POST["symbol"]);
         
         $profit = $sell[0]["shares"] * $stock["price"];
